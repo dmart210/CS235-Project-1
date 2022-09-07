@@ -27,7 +27,7 @@ class Post{
         Post(string _title, string _body){
             title = _title;
             body  = _body;
-            time(&current_time);
+            time(&current_time); //time function which takes in the address of the current time and "stamps it"
         }
 
 
