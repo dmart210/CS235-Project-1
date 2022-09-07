@@ -24,8 +24,8 @@ string Post::getTitle(){
  * @note: Getter method that returns the time the post was created
  * @returns: returns the time the Post was created 
  */
-string Post::getTimeStamp(){
-    return asctime(localtime(&current_time));
+void Post::getTimeStamp(){
+    cout << asctime(localtime(&current_time));
 }
 
 /**
@@ -34,7 +34,7 @@ string Post::getTimeStamp(){
  * @return: the body the user inserted is then set as the Post, private, "body" which can only be accessed using the getBody method
  */
 void Post::setBody(string _body){
-    _body = body;
+    body = _body;
 }
 /**
  * 
@@ -42,16 +42,16 @@ void Post::setBody(string _body){
  * @return: the title the user inserted is then set as the Post, private, "title" which can only be accessed using the getTtile method
  */
 void Post::setTitle(string _title){
-    _title = title;
+    title = _title;
 }
 
 /**
  * @return: this returns a concatenated string which includes the title of the post,
- *          the time it was created(which was casted from integer to string), and the body of the post.  
+ *          the time it was created, and the body of the post.  
  * 
  */
 string Post::displayPost(){
-    string post = title + " posted at " + to_string(current_time) + ": \n" + body + "\n";
+    string post = title + " posted at " + asctime(localtime(&current_time)) + body + "\n";
     return post;
 }
 
