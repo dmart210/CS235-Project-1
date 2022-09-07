@@ -20,7 +20,7 @@ class Post{
     public:
         string getBody();
         string getTitle();
-        string getTimeStamp();
+        void getTimeStamp();
         void setBody(string _body);
         void setTitle(string _Title);
         string displayPost();
