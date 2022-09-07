@@ -18,17 +18,51 @@ class Post{
      * 
      */
     public:
+        /**
+         * @brief Get the Body object
+         * 
+         * @return string 
+         */
         string getBody();
+        /**
+         * @brief Get the Title object
+         * 
+         * @return string 
+         */
         string getTitle();
-        string getTimeStamp();
+        /**
+         * @brief Get the Time Stamp object
+         * 
+         */
+        void getTimeStamp();
+        /**
+         * @brief Set the Body object
+         * 
+         * @param _body 
+         */
         void setBody(string _body);
+        /**
+         * @brief Set the Title object
+         * 
+         * @param _Title 
+         */
         void setTitle(string _Title);
+        /**
+         * @return string of whats the post is with the title the body, and the time stamp it was created
+         */
         string displayPost();
+        /**
+         * @brief Construct a new Post object
+         * 
+         * @param _title 
+         * @param _body 
+         */
         Post(string _title, string _body){
             title = _title;
             body  = _body;
-            time(&current_time); //time function which takes in the address of the current time and "stamps it"
+            time(&current_time);
         }
+        //
 
 
 };
