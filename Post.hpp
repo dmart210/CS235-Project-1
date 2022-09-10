@@ -23,18 +23,18 @@ class Post{
          * 
          * @return string 
          */
-        string getBody();
+        const string getBody();
         /**
          * @brief Get the Title object
          * 
          * @return string 
          */
-        string getTitle();
+        const string getTitle();
         /**
          * @brief Get the Time Stamp object
          * 
          */
-        void getTimeStamp();
+        const void getTimeStamp();
         /**
          * @brief Set the Body object
          * 

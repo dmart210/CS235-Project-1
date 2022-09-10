@@ -38,13 +38,13 @@ class Account{
          * 
          * @return string 
          */
-        string getUsername();
+        const string getUsername();
         /**
          * @brief Get the Password object
          * 
          * @return string 
          */
-        string getPassword();
+        const string getPassword();
         /**
          * @brief Set the Username object
          * 
