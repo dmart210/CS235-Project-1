@@ -49,7 +49,7 @@ bool Account::addPost(string title, string body ){
     for (int i = 0; i < strlen(cuTime) -1; i++){
         final+=*(cuTime+i);
     }
-    all_posts.push_back(title + " posted at " + final +":\n" +  body + "\n");
+    all_posts.push_back(title + " posted at " + final +":\n" +  body);
     return true;
 }
 /**

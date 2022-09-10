@@ -57,6 +57,6 @@ void Post::displayPost(){
     for (int i = 0; i < strlen(cuTime) -1; i++){
         final+=*(cuTime+i);
     }
-    string post = this->title + " posted at " + final + ":\n"  + this->body + "\n";
+    string post = this->title + " posted at " + final + ":\n"  + this->body;
     cout << post;
 }
