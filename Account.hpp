@@ -1,5 +1,3 @@
-
-#include "Post.hpp"
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -35,11 +33,43 @@ class Account{
             all_posts.push_back("");
             
         }
+        /**
+         * @brief Get the Username object
+         * 
+         * @return string 
+         */
         string getUsername();
+        /**
+         * @brief Get the Password object
+         * 
+         * @return string 
+         */
         string getPassword();
+        /**
+         * @brief Set the Username object
+         * 
+         * @param _username 
+         */
         void setUsername(string _username);
+        /**
+         * @brief Set the Password object
+         * 
+         * @param _password 
+         */
         void setPassword(string _password);
-        bool addPost(string _title, string _password);
+        /**
+         * @brief: creates a post object with the title and the body the user puts 
+         * 
+         * @param _title 
+         * @param _body 
+         * @return true, if title and password both have values that arent empty
+         * @return false, if title or  
+         */
+        bool addPost(string _title, string _body);
+        /**
+         * @brief: method that loops through the vector and prints out the post the account has
+         * 
+         */
         void viewPosts();
 };
 

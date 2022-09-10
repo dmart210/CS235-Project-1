@@ -2,6 +2,7 @@
  * @author: Dariel A. Martinez
  */
 #include "Account.hpp"
+#include "Post.hpp"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -39,8 +40,10 @@ void Account::setPassword(string _password){
  */
 bool Account::addPost(string title, string body ){
     if (title == "" || body == "") return false;
-    Post person(title,body);
-    all_posts.push_back(title + " posted at " + asctime(localtime(&current_time)) +  body + "\n");
+    Post post(title,body);
+    time_t current_time;
+    time(&current_time);
+    all_posts.push_back(title + " posted at " + asctime(localtime(&current_time)) +":" +  body + "\n");
     return true;
 }
 /**
@@ -51,4 +54,3 @@ void Account::viewPosts(){
         cout << all_posts[i] << endl;
     }
 }
-

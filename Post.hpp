@@ -1,6 +1,3 @@
-#ifndef POST_H_
-#define POST_H_
-
 #include <iostream>
 #include <time.h>
 using namespace std;
@@ -21,18 +18,51 @@ class Post{
      * 
      */
     public:
+        /**
+         * @brief Get the Body object
+         * 
+         * @return string 
+         */
         string getBody();
+        /**
+         * @brief Get the Title object
+         * 
+         * @return string 
+         */
         string getTitle();
+        /**
+         * @brief Get the Time Stamp object
+         * 
+         */
         void getTimeStamp();
+        /**
+         * @brief Set the Body object
+         * 
+         * @param _body 
+         */
         void setBody(string _body);
+        /**
+         * @brief Set the Title object
+         * 
+         * @param _Title 
+         */
         void setTitle(string _Title);
+        /**
+         * @note: method that post that prints the post of the person.
+         */
         void displayPost();
+        /**
+         * @brief Construct a new Post object
+         * 
+         * @param _title 
+         * @param _body 
+         */
         Post(string _title, string _body){
             title = _title;
             body  = _body;
             time(&current_time);
         }
+        //
 
 
 };
-#endif

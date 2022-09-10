@@ -51,7 +51,6 @@ void Post::setTitle(string _title){
  * 
  */
 void Post::displayPost(){
-    string post = this->title + " posted at " + asctime(localtime(&current_time))  + this->body + "\n";
+    string post = this->title + " posted at " + asctime(localtime(&current_time)) + ":"  + this->body + "\n";
     cout << post;
 }
-
