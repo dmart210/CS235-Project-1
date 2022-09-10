@@ -20,7 +20,7 @@ int main() {
 
   // Test display
   std::cout << std::endl;
-  cout << post1.displayPost() << endl;
+  post1.displayPost();
 
 
   std::cout << std::endl << "TASK2: TEST ACCOUNT CLASS" << std::endl<< std::endl;

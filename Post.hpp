@@ -48,9 +48,9 @@ class Post{
          */
         void setTitle(string _Title);
         /**
-         * @return string of whats the post is with the title the body, and the time stamp it was created
+         * @note: method that post that prints the post of the person.
          */
-        string displayPost();
+        void displayPost();
         /**
          * @brief Construct a new Post object
          * 

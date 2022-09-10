@@ -47,11 +47,10 @@ void Post::setTitle(string _title){
 
 /**
  * @return: this returns a concatenated string which includes the title of the post,
- *          the time it was created, and the body of the post.  
+ *          the time it was created(which was casted from integer to string), and the body of the post.  
  * 
  */
-string Post::displayPost(){
-    string post = title + " posted at " + asctime(localtime(&current_time)) + body + "\n";
-    return post;
+void Post::displayPost(){
+    string post = this->title + " posted at " + asctime(localtime(&current_time)) + ":"  + this->body + "\n";
+    cout << post;
 }
-
