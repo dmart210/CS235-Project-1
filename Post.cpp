@@ -7,7 +7,7 @@ using namespace std;
  * @note: Getter method that returns the body of the object being called
  * @returns: returns the Posts body
  */
-string Post::getBody(){
+const string Post::getBody (){
     return body;
 }
 /**
@@ -15,7 +15,7 @@ string Post::getBody(){
  * @note: Getter method that returns the title of the object being called
  * @returns: returns the Posts title
  */
-string Post::getTitle(){
+const string Post::getTitle (){
     return title;
 }
 
@@ -24,7 +24,7 @@ string Post::getTitle(){
  * @note: Getter method that returns the time the post was created
  * @returns: returns the time the Post was created 
  */
-void Post::getTimeStamp(){
+const void Post::getTimeStamp (){
     cout << asctime(localtime(&current_time));
 }
 
@@ -51,6 +51,6 @@ void Post::setTitle(string _title){
  * 
  */
 void Post::displayPost(){
-    string post = this->title + " posted at " + asctime(localtime(&current_time)) + ":"  + this->body + "\n";
+    string post = this->title + " posted at " + asctime(localtime(&current_time)) + ":\n"  + this->body + "\n";
     cout << post;
 }

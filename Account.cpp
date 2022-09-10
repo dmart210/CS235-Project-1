@@ -11,13 +11,13 @@ using namespace std;
 /**
  * @return: A getter that returns the username of the account created. (As string)
  */
-string Account::getUsername(){
+const string Account::getUsername (){
     return username;
 }
 /**
  * @return: A getter that returns the password of the account created. (As string)
  */
-string Account::getPassword(){
+const string Account::getPassword (){
     return password;
 }
 /**
@@ -43,7 +43,7 @@ bool Account::addPost(string title, string body ){
     Post post(title,body);
     time_t current_time;
     time(&current_time);
-    all_posts.push_back(title + " posted at " + asctime(localtime(&current_time)) +":" +  body + "\n");
+    all_posts.push_back(title + " posted at " + asctime(localtime(&current_time)) +":\n" +  body + "\n");
     return true;
 }
 /**
