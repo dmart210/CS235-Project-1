@@ -1,7 +1,6 @@
 /**
  * @author: Dariel A. Martinez
  */
-#include "Post.hpp"
 #include "Account.hpp"
 #include <iostream>
 #include <string>
@@ -40,8 +39,8 @@ void Account::setPassword(string _password){
  */
 bool Account::addPost(string title, string body ){
     if (title == "" || body == "") return false;
-    Post person(title, body);
-    all_posts.push_back(person.displayPost());
+    Post person(title,body);
+    all_posts.push_back(title + " posted at " + asctime(localtime(&current_time)) +  body + "\n");
     return true;
 }
 /**
