@@ -1,5 +1,6 @@
 #include "Post.hpp"
 #include <iostream>
+#include <string.h>
 using namespace std;
 
 /**
@@ -51,6 +52,11 @@ void Post::setTitle(string _title){
  * 
  */
 void Post::displayPost(){
-    string post = this->title + " posted at " + asctime(localtime(&current_time)) + ":\n"  + this->body + "\n";
+    char* cuTime = asctime(localtime(&current_time)) ;
+    string final;
+    for (int i = 0; i < strlen(cuTime) -1; i++){
+        final+=*(cuTime+i);
+    }
+    string post = this->title + " posted at " + final + ":\n"  + this->body + "\n";
     cout << post;
 }

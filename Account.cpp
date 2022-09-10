@@ -5,6 +5,7 @@
 #include "Post.hpp"
 #include <iostream>
 #include <string>
+#include <string.h>
 using namespace std;
 
 
@@ -43,7 +44,12 @@ bool Account::addPost(string title, string body ){
     Post post(title,body);
     time_t current_time;
     time(&current_time);
-    all_posts.push_back(title + " posted at " + asctime(localtime(&current_time)) +":\n" +  body + "\n");
+    char * cuTime =asctime(localtime(&current_time)) ;
+    string final;
+    for (int i = 0; i < strlen(cuTime) -1; i++){
+        final+=*(cuTime+i);
+    }
+    all_posts.push_back(title + " posted at " + final +":\n" +  body + "\n");
     return true;
 }
 /**
