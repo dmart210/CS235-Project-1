@@ -53,15 +53,16 @@ void Post::setTitle(string _title){
 
 /**
  * @return: this returns a concatenated string which includes the title of the post,
- *          the time it was created(which was casted from integer to string), and the body of the post.  
+ *          the time it was created, and the body of the post.  
  * 
  */
 void Post::displayPost(){
     char* time_pointer = asctime(localtime(&current_time)) ;
     string date_formatted;
+    //A for loop to go through the char pointer and to remove the \n that is attached to the asctime() function. The purpose to is make the date look more appealing
     for (int i = 0; i < strlen(time_pointer) -9; i++){
         date_formatted+=*(time_pointer+i);
     }
-    string post = this->title + " posted at " + date_formatted + ":\n"  + this->body;
+    string post = this->title + " posted at " + date_formatted + ":\n"  + this->body; //using the "this" pointer which returns the title and the body of the post.
     cout << post;
 }
