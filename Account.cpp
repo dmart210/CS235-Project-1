@@ -46,6 +46,7 @@ bool Account::addPost(string title, string body ){
     time(&current_time);
     char * time_pointer =asctime(localtime(&current_time)) ;
     string date_formated;
+    //A for loop to go through the char pointer and to remove the \n that is attached to the asctime() function. The purpose to is make the date look more appealing
     for (int i = 0; i < strlen(time_pointer) -9; i++){
         date_formated+=*(time_pointer+i);
     }
