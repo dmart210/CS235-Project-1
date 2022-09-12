@@ -46,7 +46,7 @@ bool Account::addPost(string title, string body ){
     time(&current_time);
     char * time_pointer =asctime(localtime(&current_time)) ;
     string date_formated;
-    for (int i = 0; i < strlen(time_pointer) -9; i++){
+    for (int i = 0; i < strlen(time_pointer) -1; i++){
         date_formated+=*(time_pointer+i);
     }
     all_posts.push_back(title + " posted at " + date_formated +":\n" +  body);

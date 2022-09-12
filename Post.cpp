@@ -28,7 +28,7 @@ const string Post::getTitle (){
 const void Post::getTimeStamp (){
     char * time_pointer =asctime(localtime(&current_time)) ;
     string date_formated;
-    for (int i = 0; i < strlen(time_pointer) -9; i++){
+    for (int i = 0; i < strlen(time_pointer) -1; i++){
         date_formated+=*(time_pointer+i);
     }
     cout << date_formated;
@@ -59,7 +59,7 @@ void Post::setTitle(string _title){
 void Post::displayPost(){
     char* time_pointer = asctime(localtime(&current_time)) ;
     string date_formatted;
-    for (int i = 0; i < strlen(time_pointer) -9; i++){
+    for (int i = 0; i < strlen(time_pointer) -1; i++){
         date_formatted+=*(time_pointer+i);
     }
     string post = this->title + " posted at " + date_formatted + ":\n"  + this->body;
