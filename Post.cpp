@@ -59,12 +59,7 @@ void Post::setTitle(string _title){
 void Post::displayPost(){
     char* time_pointer = asctime(localtime(&current_time)) ;
     string date_formatted;
-<<<<<<< HEAD
     for (int i = 0; i < strlen(time_pointer) -1; i++){
-=======
-    //A for loop to go through the char pointer and to remove the \n that is attached to the asctime() function. The purpose to is make the date look more appealing
-    for (int i = 0; i < strlen(time_pointer) -9; i++){
->>>>>>> 50015825e90868b32a8cb98952f4ddf31ad9b1a0
         date_formatted+=*(time_pointer+i);
     }
     string post = this->title + " posted at " + date_formatted + ":\n"  + this->body; //using the "this" pointer which returns the title and the body of the post.
