@@ -44,12 +44,12 @@ bool Account::addPost(string title, string body ){
     Post post(title,body);
     time_t current_time;
     time(&current_time);
-    char * cuTime =asctime(localtime(&current_time)) ;
-    string final;
-    for (int i = 0; i < strlen(cuTime) -1; i++){
-        final+=*(cuTime+i);
+    char * time_pointer =asctime(localtime(&current_time)) ;
+    string date_formated;
+    for (int i = 0; i < strlen(time_pointer) -9; i++){
+        date_formated+=*(time_pointer+i);
     }
-    all_posts.push_back(title + " posted at " + final +":\n" +  body);
+    all_posts.push_back(title + " posted at " + date_formated +":\n" +  body);
     return true;
 }
 /**
