@@ -20,7 +20,6 @@ class Account{
         Account(){
             username = "";
             password = "";
-            all_posts.push_back("");
         }
         /**
          * @param: the username and password the user input
@@ -30,7 +29,6 @@ class Account{
         Account(string _username, string _password){
             username = _username;
             password = _password;
-            all_posts.push_back("");
             
         }
         /**
@@ -38,25 +36,25 @@ class Account{
          * 
          * @return string 
          */
-        const string getUsername();
+        const string getUsername() ;
         /**
          * @brief Get the Password object
          * 
          * @return string 
          */
-        const string getPassword();
+        const string getPassword() ;
         /**
          * @brief Set the Username object
          * 
          * @param _username 
          */
-        void setUsername(string _username);
+        void setUsername(const string _username);
         /**
          * @brief Set the Password object
          * 
          * @param _password 
          */
-        void setPassword(string _password);
+        void setPassword(const string _password);
         /**
          * @brief: creates a post object with the title and the body the user puts 
          * 
@@ -65,12 +63,10 @@ class Account{
          * @return true, if title and password both have values that arent empty
          * @return false, if title or  
          */
-        bool addPost(string _title, string _body);
+        bool addPost(const string _title, const string _body);
         /**
          * @brief: method that loops through the vector and prints out the post the account has
          * 
          */
-        void viewPosts();
+        const void viewPosts();
 };
-
-
