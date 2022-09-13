@@ -20,7 +20,6 @@ class Account{
         Account(){
             username = "";
             password = "";
-            all_posts.push_back("");
         }
         /**
          * @param: the username and password the user input
@@ -30,7 +29,6 @@ class Account{
         Account(string _username, string _password){
             username = _username;
             password = _password;
-            all_posts.push_back("");
             
         }
         /**
@@ -38,13 +36,13 @@ class Account{
          * 
          * @return string 
          */
-        const string getUsername();
+        const string getUsername() ;
         /**
          * @brief Get the Password object
          * 
          * @return string 
          */
-        const string getPassword();
+        const string getPassword() ;
         /**
          * @brief Set the Username object
          * 
@@ -72,5 +70,3 @@ class Account{
          */
         void viewPosts();
 };
-
-
