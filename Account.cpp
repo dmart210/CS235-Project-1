@@ -12,7 +12,7 @@ using namespace std;
 /**
  * @return: A getter that returns the username of the account created. (As string)
  */
-const string Account::getUsername (){
+const string Account::getUsername(){
     return username;
 }
 /**
@@ -59,5 +59,6 @@ bool Account::addPost(string title, string body ){
 void Account::viewPosts(){
     for (int i = 0; i < all_posts.size(); ++i){
         cout << all_posts[i] << endl;
+
     }
 }
