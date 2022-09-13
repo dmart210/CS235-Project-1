@@ -5,13 +5,14 @@
 #include "Post.hpp"
 #include <iostream>
 #include <string>
+#include <string.h>
 using namespace std;
 
 
 /**
  * @return: A getter that returns the username of the account created. (As string)
  */
-const string Account::getUsername (){
+const string Account::getUsername(){
     return username;
 }
 /**
@@ -23,13 +24,13 @@ const string Account::getPassword (){
 /**
  * @param: the string named _username that the user wants to set the username as.
  */
-void Account::setUsername(string _username){
+void Account::setUsername(const string _username){
     username = _username;
 }
 /**
  * @param: the string named _password that the user wants to set the password as.
  */
-void Account::setPassword(string _password){
+void Account::setPassword(const string _password){
     password = _password;
 }
 /**
@@ -38,19 +39,26 @@ void Account::setPassword(string _password){
  * @return: It returns false if theres no title or body
  * @return: Returns true otherwise and creates a post and adds it to the string vector
  */
-bool Account::addPost(string title, string body ){
+bool Account::addPost(const string title, const string body ){
     if (title == "" || body == "") return false;
     Post post(title,body);
     time_t current_time;
     time(&current_time);
-    all_posts.push_back(title + " posted at " + asctime(localtime(&current_time)) +":\n" +  body + "\n");
+    char * time_pointer =asctime(localtime(&current_time)) ;
+    string date_formated;
+    //A for loop to go through the char pointer and to remove the \n that is attached to the asctime() function. The purpose to is make the date look more appealing
+    for (int i = 0; i < strlen(time_pointer) -1; i++){
+        date_formated+=*(time_pointer+i);
+    }
+    all_posts.push_back(title + " posted at " + date_formated +":\n" +  body);
     return true;
 }
 /**
  * @note: A for loop that prints out the posts in the accounts
  */
-void Account::viewPosts(){
+const void Account::viewPosts(){
     for (int i = 0; i < all_posts.size(); ++i){
         cout << all_posts[i] << endl;
+
     }
 }
